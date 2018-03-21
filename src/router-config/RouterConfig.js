@@ -1,5 +1,5 @@
-import {default as Home} from '../home/Home';
-import {default as About} from '../about/About';
+import {default as Home} from '../lib/home/Home';
+import {default as About} from '../lib/about/About';
 
 const routerConfig = [
     {

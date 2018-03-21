@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
-import {Router, Route, Link, browserHistory } from 'react-router';
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import {default as configureStore} from '../redux/reducer';
 import {default as routerConfig} from '../router-config/RouterConfig';
+import {Home, About} from '../lib';
 
 class App extends Component {
     constructor(props) {
@@ -13,7 +14,17 @@ class App extends Component {
         let store = configureStore();
         return (
             <Provider store={store}>
-                <Router history={browserHistory} routes={routerConfig} />
+                <div>
+                    <div className='personal-blog'>
+                        <h2>BLOG</h2>
+                    </div>
+                    <Router basename='/' component={Home}>
+                        <Switch>
+                            <Route path='/home' component={Home}/>
+                            <Route path='/about' component={About}/>
+                        </Switch>
+                    </Router>
+                </div>
             </Provider>
         )
     }
