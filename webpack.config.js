@@ -16,7 +16,6 @@ module.exports = {
         vendor: [
             'antd',
             'react-redux',
-            'react-router',
             'react-router-dom',
             'redux'
         ]

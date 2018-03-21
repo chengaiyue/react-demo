@@ -20,8 +20,9 @@ class App extends Component {
                     </div>
                     <Router basename='/' component={Home}>
                         <Switch>
-                            <Route path='/home' component={Home}/>
-                            <Route path='/about' component={About}/>
+                            <Route exact path='/' component={Home}/>
+                            <Route exact path='/home' component={Home}/>
+                            <Route exact path='/about' component={About}/>
                         </Switch>
                     </Router>
                 </div>
