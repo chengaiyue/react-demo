@@ -7,7 +7,7 @@ class About extends Component {
     }
 
     onClick = () => {
-        this.props.history.push('./home')
+        this.props.history.push('./home');
     }
 
     render () {
