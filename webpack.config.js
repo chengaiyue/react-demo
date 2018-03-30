@@ -11,15 +11,7 @@ let CopyWebpackPlugin = require('copy-webpack-plugin');
 const minimize = process.env.REACT_WEBPACK_ENV === 'dist';
 
 module.exports = {
-    entry: {
-        index: path.resolve(__dirname, 'src/index.jsx'),
-        vendor: [
-            'antd',
-            'react-redux',
-            'react-router-dom',
-            'redux'
-        ]
-    },
+    entry: path.resolve(__dirname, 'src/index.jsx'),
     devtool: 'eval-source-map', // 生成map文件 利于调试
     output: {
         path: path.resolve(__dirname, 'lib'),
@@ -56,9 +48,7 @@ module.exports = {
             names: ['common', 'vendor']
         }),
         new CopyWebpackPlugin([
-            {from: 'node_modules/react/umd/react.production.min.js', to: 'lib/react/dist/'},
-            {from: 'node_modules/react-dom/umd/react-dom.production.min.js', to: 'lib/react-dom/dist/'},
-            {from: 'src/index.html', to: './'}
+
         ], {
             ignore: [
                 '*.less',
@@ -157,10 +147,6 @@ module.exports = {
                 })
             }
         ]
-    },
-    externals: {
-        react: 'window.React',
-        'react-dom': 'window.ReactDOM'
     }
     // watchOptions:{
     //     //检测修改的时间，以毫秒为单位
