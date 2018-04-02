@@ -1,7 +1,7 @@
-import {default as About} from './about/About';
-import {default as Home} from './home/Home';
+import {default as Header} from './header/Header';
+import {default as Sider} from './sider/Sider';
 
 export {
-    About,
-    Home
+    Header,
+    Sider
 };
